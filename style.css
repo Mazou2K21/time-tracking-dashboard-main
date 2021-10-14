@@ -1,0 +1,489 @@
+:root {
+    --color-blue: hsl(246, 80%, 60%);
+    --color-orange: hsl(15, 100%, 70%);
+    --color-light-blue: hsl(195, 74%, 62%);
+    --color-red: hsl(348, 100%, 68%);
+    --color-green: hsl(145, 58%, 55%);
+    --color-violet: hsl(264, 64%, 52%);
+    --color-yellow: hsl(43, 84%, 65%);
+  
+    --color-very-dark-blue: hsl(226, 43%, 10%);
+    --color-dark-blue: hsl(235, 46%, 20%);
+    --color-desaturated-blue: hsl(235, 45%, 61%);
+    --color-pale-blue: hsl(236, 100%, 87%);
+  
+    --color-dark-blue-opacity: hsl(236, 41%, 34%);
+}
+  
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body{
+    min-height: 100vh;
+    background-color: var(--color-very-dark-blue);
+    color: white;
+    font-family: "Rubix", sans-serif;
+}
+
+main{
+    padding: 5rem 1rem;
+    position: relative;
+    top: 50vh;
+    transform: translateY(-50%);
+}
+
+.tracking-dashboard{
+    display: flex;
+    justify-content: center;
+}
+
+.user-box{
+    background-color: var(--color-dark-blue);
+    max-width: 160rem;
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 30rem;
+    margin-right: 3rem;
+    border-radius: 2rem;
+}
+
+.info-user{
+    background-color: var(--color-blue);
+    max-width: 100%;
+    padding: 3rem;
+    padding-bottom: 10rem;
+    border-radius: 2rem;
+}
+
+.image{
+    width: 9rem;
+    margin-bottom: 5rem;
+}
+
+.user-image{
+    display: block;
+    width: 100%;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+.text{
+    color: var(--color-pale-blue);
+    font-weight: 300;
+    font-size: 1.8rem;
+}
+
+.name{
+    font-weight: 300;
+    font-size: 4.6rem;
+    margin-top: 0.5rem;
+}
+
+.time-change{
+    padding: 3rem;
+}
+
+.list{
+    list-style: none;
+}
+
+.option{
+    color: var(--color-pale-blue);
+    font-weight: 400;
+}
+
+.option:nth-child(2){
+    color: white;
+}
+
+.option-margin{
+    margin-bottom: 2rem;
+}
+
+.change-time-btn{
+    padding-right: 2rem;
+    color: inherit;
+    font-size: 1.8rem;
+    background-color: transparent;
+    border: none;
+    transition-duration: 0.5s;
+}
+
+.change-time-btn:hover{
+    color: white;
+    transform: scale(1.1);
+}
+
+.tracking-box{
+    flex: 0 1 100rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 3rem;
+}
+
+.time-tracking{
+    background-repeat: no-repeat;
+    background-size: 6.5rem;
+    background-position: top -0.8rem right 1.5rem;
+    padding-top: 4rem;
+    border-radius: 2rem;
+}
+
+.time-tracking:nth-child(1){
+    background-color: var(--color-orange);
+    background-image: url(images/icon-work.svg);
+}
+
+.time-tracking:nth-child(2){
+    background-color: var(--color-light-blue);
+    background-image: url(images/icon-play.svg);
+    background-position: top -0.4rem right 2rem;
+}
+
+.time-tracking:nth-child(3){
+    background-color: var(--color-red);
+    background-image: url(images/icon-study.svg);
+}
+
+.time-tracking:nth-child(4){
+    background-color: var(--color-green);
+    background-image: url(images/icon-exercise.svg);
+    background-position: top -0.2rem right 2rem;
+}
+
+.time-tracking:nth-child(5){
+    background-color: var(--color-violet);
+    background-image: url(images/icon-social.svg);
+    background-position: top 0rem right 2rem;
+}
+
+.time-tracking:nth-child(6){
+    background-color: var(--color-yellow);
+    background-image: url(images/icon-self-care.svg);
+}
+
+.content{
+    background-color: var(--color-dark-blue);
+    height: 100%;
+    padding: 3rem;
+    border-radius: 2rem;
+}
+
+.content:hover{
+    background-color: var(--color-dark-blue-opacity);
+}
+
+.cell-theme{
+    margin-bottom: 3.5rem;
+}
+
+.theme-text{
+    display: inline;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.theme-change{
+    background-color: transparent;
+    float: right;
+    position: relative;
+    top: 0.4rem;
+    padding: 0.5rem;
+    border: none;
+    transition-duration: 0.5s;
+}
+
+.theme-image{
+    display: block;
+    width: 2rem;
+}
+
+.time-change:hover{
+    transform: scale(1.2);
+}
+
+.time-tracking-time{
+    font-size: 6.2rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    transition-duration: 0.5s;
+}
+
+.time-tracking-time:hover{
+    transform: scale(1.1);
+}
+
+.time-tracking-text{
+    color: var(--color-pale-blue);
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.time-tracking-time--animation{
+    animation-name: hiddenAndShow;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+    margin-top: 20px;
+    position: relative;
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+@keyframes hiddenAndShow{
+    0%{
+        opacity: 1;
+    }
+
+    50%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    html{
+        font-size: 52%;
+    }
+
+    .tracking-box{
+        flex: 0 1 90rem;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    html{
+        font-size: 52%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    html{
+        font-size: 44.5%;
+    }
+
+    .tracking-box{
+        flex: 0 1 92rem;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+@media screen and (max-width: 768px) {
+    html{
+        font-size: 62.5%;
+    }
+
+    main{
+        padding: 0;
+        top: 0;
+        transform: translateY(0);
+    }
+
+    .tracking-dashboard{
+        flex-direction: column;
+        padding: 16rem 6rem;
+    }
+
+    .user-box{
+        flex: 0 1 none;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 4rem;
+    }
+
+    .info-user{
+    position: relative;
+    padding: 6rem 5rem;
+    }
+
+    .image{
+        width: 12rem;
+        height: 100%;
+        display: inline-block;
+        margin: 0;
+        margin-right: 4rem;
+    }
+
+    .text-box{
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .text{
+        font-size: 2.8rem;
+    }
+
+    .name{
+        font-size: 4.5rem;
+    }
+
+    .time-change{
+        padding: 4rem;
+    }
+
+    .list{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .option-margin{
+        margin-bottom: 0;
+    }
+
+    .change-time-btn{
+        font-size: 2.5rem;
+    }
+
+    .tracking-box{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .time-tracking--margin-row{
+        margin-bottom: 0;
+    }
+
+    .time-tracking--margin-column{
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .time-tracking{
+        background-size: 11rem;
+        background-position: top -0.8rem right 2.5rem;
+        width: 100%;
+        margin-bottom: 4rem;
+        padding-top: 6rem;
+    }
+
+    .content{
+        padding: 5rem 4rem;
+    }
+
+    .time-box{
+        position: relative;
+    }
+
+    .time-tracking-time{
+        display: inline-block;
+        font-size: 6rem;
+        margin: 0;
+    }
+
+    .time-tracking-text{
+        display: inline-block;
+        font-size: 2.2rem;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        margin: 0;
+    }
+
+    .cell-theme{
+        margin-bottom: 1rem;
+    }
+
+    .theme-text{
+        font-size: 3rem;
+    }
+
+    .theme-image{
+        width: 3rem;
+    }
+
+    .attribution { 
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 670px) {
+    html {
+      font-size: 55%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    html {
+      font-size: 53%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    html {
+      font-size: 49%;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    html {
+      font-size: 47%;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    html {
+      font-size: 45%;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    html {
+      font-size: 36%;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    html {
+      font-size: 34%;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    html {
+      font-size: 32%;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    html {
+      font-size: 30%;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    html {
+      font-size: 26%;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    html {
+      font-size: 22%;
+    }
+}
